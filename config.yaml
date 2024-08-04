@@ -1,0 +1,32 @@
+data:
+  raw_data_path: 'data/raw/train_data.csv'
+  processed_data_path: 'data/processed/processed_data.csv'
+
+model:
+  type: 'RandomForestRegressor'
+  params:
+    n_estimators: 100
+    random_state: 42
+
+training:
+  test_size: 0.2
+  random_state: 42
+
+features:
+  numeric:
+    - 'Available Extra Rooms in Hospital'
+    - 'Bed Grade'
+    - 'City_Code_Patient'
+    - 'Visitors with Patient'
+    - 'Admission_Deposit'
+    - 'Age_Ordinal'
+  categorical:
+    - 'Hospital_type_code'
+    - 'City_Code_Hospital'
+    - 'Hospital_region_code'
+    - 'Department'
+    - 'Ward_Type'
+    - 'Ward_Facility_Code'
+    - 'Type of Admission'
+    - 'Severity of Illness'
+  target: 'Stay'
